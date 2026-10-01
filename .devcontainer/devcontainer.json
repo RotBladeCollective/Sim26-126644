@@ -1,0 +1,34 @@
+{
+  "name": "PHP Stack - Teaching",
+  "dockerComposeFile": [
+    "../compose.yaml",
+    "../compose.teaching.yaml"
+  ],
+  "service": "php",
+  "workspaceFolder": "/workspace",
+  "overrideCommand": false,
+  "remoteUser": "vscode",
+  "forwardPorts": [8080, 8081],
+  "portsAttributes": {
+    "8080": {
+      "label": "PHP application",
+      "protocol": "http",
+      "onAutoForward": "openPreview"
+    },
+    "8081": {
+      "label": "phpMyAdmin",
+      "protocol": "http",
+      "onAutoForward": "ignore"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "mtxr.sqltools",
+        "mtxr.sqltools-driver-mysql",
+        "oracle.mysql-shell-for-vs-code"
+      ]
+    }
+  }
+}
