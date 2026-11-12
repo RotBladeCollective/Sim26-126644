@@ -1,0 +1,134 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Cinzel', serif;
+    color: #d8dde6;
+    background: #05070b;
+}
+
+.divisor { color: #8fa3bf; letter-spacing: 10px; }
+
+/* ---------- Topo ---------- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background:
+        radial-gradient(ellipse at 50% 30%, #243248 0%, #0a0d14 55%, #000 100%);
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    letter-spacing: 14px;
+    text-transform: uppercase;
+    color: #f2f4f8;
+    text-shadow: 0 0 40px rgba(180, 210, 255, .6);
+}
+
+.hero .divisor { margin: 25px 0; font-size: 1.2rem; }
+.hero p { letter-spacing: 6px; color: #8fa3bf; }
+
+.seta {
+    margin-top: 60px;
+    color: #8fa3bf;
+    text-decoration: none;
+    font-size: 1.5rem;
+    animation: flutuar 2s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(12px); }
+}
+
+/* ---------- Seções dos jogos ---------- */
+.jogo {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 30px;
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+.jogo.direita { flex-direction: row-reverse; }
+
+.moldura {
+    position: relative;
+    flex: 1;
+    aspect-ratio: 16 / 10;
+    background: linear-gradient(135deg, #131a28, #0a0d14);
+    border: 1px solid #3a475c;
+    box-shadow: 0 0 0 6px #05070b, 0 0 0 7px #28324a,
+                0 0 50px rgba(120, 160, 220, .15);
+    overflow: hidden;
+}
+
+.moldura img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(40%) brightness(.85);
+    transition: filter .5s, transform .8s;
+    z-index: 1;
+}
+
+.moldura:hover img { filter: none; transform: scale(1.05); }
+
+.reserva {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    letter-spacing: 4px;
+    color: #3a475c;
+}
+
+.texto { flex: 1; }
+
+.genero {
+    font-size: .8rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #8fa3bf;
+}
+
+.texto h2 {
+    font-size: 2.4rem;
+    letter-spacing: 4px;
+    color: #fff;
+    margin: 12px 0;
+    text-shadow: 0 0 20px rgba(180, 210, 255, .35);
+}
+
+.texto .divisor { margin-bottom: 20px; }
+
+.texto p {
+    font-family: Georgia, serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #b6bfcc;
+}
+
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    letter-spacing: 6px;
+    font-size: .8rem;
+    color: #4a566b;
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 800px) {
+    .jogo, .jogo.direita { flex-direction: column; gap: 35px; padding: 60px 20px; }
+    .moldura { width: 100%; }
+}
