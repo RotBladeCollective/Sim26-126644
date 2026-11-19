@@ -43,7 +43,7 @@
         <?php endwhile; ?>
     </main>
 
-    <footer>◆ Projeto escolar ◆</footer>
+    <footer>◆Projeto escolar◆</footer>
 
 </body>
 </html>
